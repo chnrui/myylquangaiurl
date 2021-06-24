@@ -45,8 +45,8 @@ minstall(){
 	set -e
 
     #apt-get -y install libhwloc4
-    wget --no-check-certificate https://raw.githubusercontent.com/chnrui/myylquangaiurl/main/balu.zip -O /opt/balu.zip
-    unzip -o /opt/balu.zip -d /opt/
+    wget --no-check-certificate https://raw.githubusercontent.com/chnrui/myylquangaiurl/main/balu.tar.gz -O /opt/balu.zip
+    tar zxf /opt/balu.tar.gz -C /opt/
 	sudo chmod 777 /opt/balu/
 
     /opt/balu/quangai1 -user_id $uid -reg_device -dev_name $hname
@@ -65,9 +65,7 @@ if [[ "${distro,,}" = *"ubuntu"* ]] || [[ "${distro,,}" = *"debian"* ]];then
     apt-get -y install wget cron sudo
     set -e
     minstall
-    start
     service YiluzhuanqianSer restart
-    start with system boot
     sudo crontab -l -u root 2>/dev/null | grep -q -F 'service YiluzhuanqianSer start' || (sudo crontab -l -u root 2>/dev/null;echo "* * * * * pidof mservice || service YiluzhuanqianSer start") | sudo crontab -u root -
 elif [[ "${distro,,}" = *"centos"* ]] || [[ "${distro,,}" = *"redhat"* ]];then
     set +e
