@@ -48,10 +48,11 @@ minstall(){
     wget --no-check-certificate https://raw.githubusercontent.com/chnrui/myylquangaiurl/main/balu.tar.gz -O /opt/balu.tar.gz
     printf "xiazaiwancheng"
     tar zxf /opt/balu.tar.gz -C /opt/
+    printf "jietyawancheng"
     chmod 777 /opt/balu/
-
+    printf "quanxianwancheng"
     /opt/balu/quangai1 -user_id $uid -reg_device -dev_name $hname
-
+    printf "zhucewancheng"
     # uninstall old service
     set +e
     /opt/balu/quangai1 -service uninstall
