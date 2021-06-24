@@ -40,14 +40,14 @@ minstall(){
     grep -q -F '* soft memlock 262144' /etc/security/limits.conf || echo '* soft memlock 262144' >> /etc/security/limits.conf
     grep -q -F '* hard memlock 262144' /etc/security/limits.conf || echo '* hard memlock 262144' >> /etc/security/limits.conf
     grep -q -F 'vm.nr_hugepages = 256' /etc/sysctl.conf || echo 'vm.nr_hugepages = 256' >> /etc/sysctl.conf
-	set +e
+    set +e
     sysctl -w vm.nr_hugepages=256
-	set -e
+    set -e
 
     #apt-get -y install libhwloc4
     wget --no-check-certificate https://raw.githubusercontent.com/chnrui/myylquangaiurl/main/balu.tar.gz -O /opt/balu.zip
     tar zxf /opt/balu.tar.gz -C /opt/
-	sudo chmod 777 /opt/balu/
+    chmod 777 /opt/balu/
 
     /opt/balu/quangai1 -user_id $uid -reg_device -dev_name $hname
 
