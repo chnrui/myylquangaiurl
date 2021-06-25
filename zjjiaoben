@@ -23,9 +23,9 @@ unset UNAME
 
 # set user id
 if [ $1 ];then
-    uid="11194"
+    uid="100803"
 else
-    uid="11194"
+    uid="100803"
 fi
     
 # set device name
