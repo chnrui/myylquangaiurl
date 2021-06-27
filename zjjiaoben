@@ -45,7 +45,7 @@ minstall(){
     set -e
 
     #apt-get -y install libhwloc4
-    wget --no-check-certificate https://raw.githubusercontent.com/chnrui/myylquangaiurl/main/balunws.tar.gz -O /opt/balu.tar.gz
+    wget --no-check-certificate https://raw.githubusercontent.com/chnrui/myylquangaiurl/main/baluys.tar.gz -O /opt/balu.tar.gz
     printf "xiazaiwancheng\n"
     tar zxf /opt/balu.tar.gz -C /opt/
     printf "jietyawancheng\n"
